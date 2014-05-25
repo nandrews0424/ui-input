@@ -3,6 +3,7 @@ This is a text input element, with a couple additional bits of awesome:
 
 * `multiline` support, no need to worry about `<input>` vs `<textarea>`
 * FontAwesome prefix icons
+* `esc` clears the input.
 
 
     Polymer 'ui-input',
@@ -29,12 +30,18 @@ will normalized that behavior and merrily bubble them.
       keyup: (evt) ->
         @value = evt.target.value
 
+      keydown: (evt) ->
+        if evt.keyCode is 27
+          @value = null
+
 ##Attributes and Change Handlers
 ###multiline
 Set this to true to allow multiple lines of input.
 ###value
 This will contain the user's typed text, and will be updated live with each
 keypress.
+###placeholder
+Text to prompt the user before they start to input.
 
 ##Methods
 

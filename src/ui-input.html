@@ -1,13 +1,13 @@
-<polymer-element name="ui-input" attributes="value multiline icon">
+<polymer-element name="ui-input" attributes="value multiline icon placeholder">
 <template>
   <link rel="stylesheet" type="text/css" href="./ui-input.css">
-  <section id="field" on-keyup="keyup">
+  <section id="field" on-keydown="{{keydown}}">
     <i id="icon" class="fa {{icon}}"></i>
     <template if="{{multiline}}">
-      <textarea id="input" value="{{value}}" rows="{{rows}}" fit?="{{rows === 'fit'}}" disabled?="{{disabled}}" placeholder="{{placeholder}}" aria-labelledby="placeholder" aria-invalid="{{invalid}}" on-change="{{change}}" on-focus="{{focus}}" on-blur="{{blur}}"></textarea>
+      <textarea id="input" value="{{value}}" rows="{{rows}}" fit?="{{rows === 'fit'}}" disabled?="{{disabled}}" placeholder="{{placeholder}}" aria-labelledby="placeholder" aria-invalid="{{invalid}}" on-change="{{change}}" on-focus="{{focus}}" on-blur="{{blur}}" on-keyup="keyup"></textarea>
     </template>
     <template if="{{!multiline}}">
-      <input id="input" value="{{value}}" disabled?="{{disabled}}" placeholder="{{placeholder}}" aria-labelledby="placeholder" aria-invalid="{{invalid}}" on-change="{{change}}" on-focus="{{focus}}" on-blur="{{blur}}">
+      <input id="input" value="{{value}}" disabled?="{{disabled}}" placeholder="{{placeholder}}" aria-labelledby="placeholder" aria-invalid="{{invalid}}" on-change="{{change}}" on-focus="{{focus}}" on-blur="{{blur}}" on-keyup="keyup">
     </template>
   </section>
   <content></content>
