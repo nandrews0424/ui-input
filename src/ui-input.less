@@ -9,6 +9,9 @@
     padding-right: 0.25em;
   }
   #field {
+    &.disabled {
+      .disabled;
+    }
     display: flex;
     margin: 0;
     padding: 0.65em 0.65em;
@@ -17,6 +20,7 @@
     color: @color-disabled-text;
     background-color: transparent;
     .transition(background-color @transition,
+    opacity @transition,
     box-shadow @transition,
     border-color @transition;);
     &.focused {

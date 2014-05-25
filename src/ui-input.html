@@ -1,7 +1,7 @@
 <polymer-element name="ui-input" attributes="value multiline icon placeholder disabled rows">
 <template>
   <link rel="stylesheet" type="text/css" href="./ui-input.css">
-  <section id="field" on-keydown="{{keydown}}">
+  <section id="field" on-keydown="{{keydown}}" class="{{ {disabled: disabled} | tokenList }}">
     <i id="icon" class="fa {{icon}}"></i>
     <template if="{{multiline}}">
       <textarea id="input" value="{{value}}" rows="{{rows}}" fit?="{{rows === 'fit'}}" disabled?="{{disabled}}" placeholder="{{placeholder}}" aria-labelledby="placeholder" aria-invalid="{{invalid}}" on-change="{{change}}" on-focus="{{focus}}" on-blur="{{blur}}" on-keyup="keyup"></textarea>

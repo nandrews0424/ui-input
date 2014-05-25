@@ -47,6 +47,8 @@ When true, the field won't take a focus.
 ###rows
 Number of rows to show in a multiline input.
 
+      rows: 'fit'
+
 ##Methods
 
 ##Event Handlers
