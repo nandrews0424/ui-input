@@ -1,0 +1,35 @@
+@import "../node_modules/ui-styles/variables";
+
+:host {
+  display: inline-block;
+  width: 100%;
+  #field {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0.65em 1em;
+    font-size: 1em;
+    .border;
+    color: @color-disabled-text;
+    .transition(background-color @transition,
+    box-shadow @transition,
+    border-color @transition;);
+    &.focused {
+      color: @color-text;
+      border-color: @color-focus-border;
+      .box-shadow(0.3em 0em 0em 0em rgba(0, 0, 0, 0.2) inset);
+    }
+    input, textarea {
+      font-size: 1em;
+      outline: none;
+      border: none;
+      margin: 0;
+      padding: 0;
+      color: @color-disabled-text;
+      .transition(color @transition);
+      &:focus {
+        color: @color-text;
+      }
+    }
+  }
+}

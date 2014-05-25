@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>ui-input</title>
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <link rel="import" href="build/ui-input.html">
+    <style>
+      body {
+        font-family: "Helvetica Neue", "Helvetica", Arial;
+      }
+      #holder {
+        width: 30em;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <div id="holder">
+      <ui-input onkeyup="console.log(this.value);">
+      </ui-input>
+      <ui-input placeholder="Hi Mom" icon="fa-female">
+      </ui-input>
+    </div>
+    <script>
+      document.addEventListener('polymer-ready', function() {
+        //poke your element here
+      })
+    </script>
+  </body>
+</html>

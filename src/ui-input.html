@@ -1,0 +1,15 @@
+<polymer-element name="ui-input" attributes="value">
+<template>
+  <link rel="stylesheet" type="text/css" href="./ui-input.css">
+  <section id="field" on-keyup="keyup">
+    <template if="{{multiline}}">
+      <textarea id="input" value="{{value}}" rows="{{rows}}" fit?="{{rows === 'fit'}}" disabled?="{{disabled}}" placeholder="{{placeholder}}" aria-labelledby="placeholder" aria-invalid="{{invalid}}" on-change="{{change}}" on-focus="{{focus}}" on-blur="{{blur}}"></textarea>
+    </template>
+    <template if="{{!multiline}}">
+      <input id="input" value="{{value}}" disabled?="{{disabled}}" placeholder="{{placeholder}}" aria-labelledby="placeholder" aria-invalid="{{invalid}}" on-change="{{change}}" on-focus="{{focus}}" on-blur="{{blur}}">
+    </template>
+  </section>
+  <content></content>
+</template>
+<script src="./ui-input.js"></script>
+</polymer-element>

@@ -1,0 +1,26 @@
+{
+  "name": "ui-input",
+  "version": "0.0.0",
+  "dependencies": {
+    "browserify": "",
+    "browserify-data": "",
+    "coffee-script": "",
+    "coffeeify": "",
+    "express": "",
+    "gulp": "",
+    "gulp-browserify": "",
+    "gulp-concat": "",
+    "gulp-less": "",
+    "gulp-rename": "",
+    "gulp-replace": "",
+    "gulp-shell": "",
+    "ui-fonts": "git+https://github.com/wballard/ui-fonts.git",
+    "ui-styles": "git+https://github.com/wballard/ui-styles.git",
+    "vulcanize": ""
+  },
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "bower install && gulp --require coffee-script/register --gulpfile gulpfile.litcoffee build",
+    "test": "gulp --require coffee-script/register --gulpfile gulpfile.litcoffee watch"
+  }
+}
