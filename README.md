@@ -36,6 +36,8 @@ keypress.
 Text to prompt the user before they start to input.
 ###disabled
 When true, the field won't take a focus.
+###rows
+Number of rows to show in a multiline input.
 
 ##Methods
 
