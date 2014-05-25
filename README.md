@@ -34,6 +34,8 @@ This will contain the user's typed text, and will be updated live with each
 keypress.
 ###placeholder
 Text to prompt the user before they start to input.
+###disabled
+When true, the field won't take a focus.
 
 ##Methods
 
