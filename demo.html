@@ -12,9 +12,15 @@
       }
       #holder {
         width: 30em;
+        margin: 1em;
       }
       .big {
         height: 10em;
+      }
+      #darkholder {
+        background-color: black;
+        width: 30em;
+        margin: 1em;
       }
     </style>
   </head>
@@ -25,6 +31,14 @@
       <ui-input placeholder="Hi Mom" icon="fa-female">
       </ui-input>
       <ui-input class="big" multiline="true">
+      </ui-input>
+    </div>
+    <div id="darkholder">
+      <ui-input class="inverted" onkeyup="console.log(this.value);">
+      </ui-input>
+      <ui-input class="inverted" placeholder="Hi Mom" icon="fa-female">
+      </ui-input>
+      <ui-input class="inverted" class="big" multiline="true">
       </ui-input>
     </div>
     <script>
