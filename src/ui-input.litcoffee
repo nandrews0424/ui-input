@@ -24,6 +24,7 @@ will normalized that behavior and merrily bubble them.
         @bubble evt
 
       change: (evt) ->
+        @resize() if @rows is 'fit'
         @value = evt.target.value
         @bubble evt
 
@@ -31,8 +32,18 @@ will normalized that behavior and merrily bubble them.
         @value = evt.target.value
 
       keydown: (evt) ->
+        @resize() if @rows is 'fit'
         if evt.keyCode is 27
           @value = null
+
+      cut: (evt) ->
+        @resize() if @rows is 'fit'
+
+      paste: (evt) ->
+        @resize() if @rows is 'fit'
+
+      drop: (evt) ->
+        @resize() if @rows is 'fit'
 
 ##Attributes and Change Handlers
 ###multiline
@@ -45,11 +56,22 @@ Text to prompt the user before they start to input.
 ###disabled
 When true, the field won't take a focus.
 ###rows
-Number of rows to show in a multiline input.
+Number of rows to show in a multiline input, if not specified this will default to
+`fit`, which will autogrow. Which is almost certainly what you want.
 
       rows: 'fit'
 
 ##Methods
+###resize
+Resize to the content, eliminating pesky scrolling. This only works when
+`multiline="true"`.
+
+      resize: ->
+        textarea = @shadowRoot.querySelector 'textarea'
+        setTimeout ->
+          textarea.style.height = 'auto'
+          textarea.style.height = "#{textarea.scrollHeight}px"
+
 
 ##Event Handlers
 
