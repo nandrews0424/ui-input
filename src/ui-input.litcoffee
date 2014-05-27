@@ -58,6 +58,8 @@ When true, the field won't take a focus.
 ###rows
 Number of rows to show in a multiline input, if not specified this will default to
 `fit`, which will autogrow. Which is almost certainly what you want.
+###icon
+A [FontAwesome](http://fontawesome.io/) icon, just put it in like `fa-eye`.
 
       rows: 'fit'
 
