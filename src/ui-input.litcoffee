@@ -24,7 +24,7 @@ will normalized that behavior and merrily bubble them.
         @bubble evt
 
       change: (evt) ->
-        @resize() if @rows is 'fit'
+        @resize() if @multiline and @rows is 'fit'
         @value = evt.target.value
         @bubble evt
 
@@ -32,18 +32,18 @@ will normalized that behavior and merrily bubble them.
         @value = evt.target.value
 
       keydown: (evt) ->
-        @resize() if @rows is 'fit'
+        @resize() if @multiline and @rows is 'fit'
         if evt.keyCode is 27
           @value = null
 
       cut: (evt) ->
-        @resize() if @rows is 'fit'
+        @resize() if @multiline and @rows is 'fit'
 
       paste: (evt) ->
-        @resize() if @rows is 'fit'
+        @resize() if @multiline and @rows is 'fit'
 
       drop: (evt) ->
-        @resize() if @rows is 'fit'
+        @resize() if @multiline and @rows is 'fit'
 
 ##Attributes and Change Handlers
 ###multiline
